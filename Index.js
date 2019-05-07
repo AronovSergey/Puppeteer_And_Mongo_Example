@@ -3,10 +3,10 @@ const INPUTLIST = require('./InputList');
 const mongoose = require('mongoose');
 const mongoDB = require('./models/mongo');
 
-const listOfWords = INPUTLIST.word_with_8_characters;
+const listOfWords = INPUTLIST.word_with_2_characters;
 const Word = mongoDB.changeFirstLetterForwardDB;
 
-let id = 279;
+let id = 0;
 
 async function run()
 {
@@ -17,7 +17,7 @@ async function run()
     const SEARCH_BAR_SELECTOR = '#tsf > div:nth-child(2) > div > div.RNNXgb > div > div.a4bIc > input';
     const BUTTON_SELECTOR = '#tsf > div:nth-child(2) > div > div.FPdoLc.VlcLAe > center > input[type="submit"]:nth-child(1)';
 
-    mongoose.connect("mongodb+srv://admin-sergey:Aa123456@cluster0-9gwac.mongodb.net/GOOGLE_AUTOMATION", { useNewUrlParser: true });
+    mongoose.connect("mongodb+srv://admin-sergey:<PASSWORD>@cluster0-9gwac.mongodb.net/GOOGLE_AUTOMATION", { useNewUrlParser: true });
 
     const scriptEachLetterForward = (word) => {
         return word.replace(/[a-zA-Z]/g, function (letter){
